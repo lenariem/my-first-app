@@ -1,6 +1,9 @@
+<p 
+  [ngStyle]="{backgroundColor: getColor()}"
+  [ngClass]="{online: serverStatus === 'online'}" 
 
-
-<p class="mt-2">
-  <b>{{ "Server Info: " }}</b> Server with ID {{ serverId }} is
+>
+  <b class="text-white">{{ "Server Info: " }}</b> Server with ID {{ serverId }} is
   {{ getServerStatus() }}
 </p>
+
