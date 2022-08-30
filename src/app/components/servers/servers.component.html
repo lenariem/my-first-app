@@ -4,7 +4,7 @@
 <!-- two-way-binding -->
 <input type="text" class="form-control" [(ngModel)]="serverName" />
 
-<p>{{serverName}}</p>
+<p>{{ serverName }}</p>
 
 <button
   class="btn btn-primary"
@@ -13,11 +13,20 @@
 >
   Add Server
 </button>
-<p>{{ allowNewServer }}</p>
+
 <!-- the same -->
 <!-- <p [innerText]="allowNewServer"></p>
  -->
-<p>{{ serverCreationStatus }}</p>
+<!-- <p>{{ serverCreationStatus }}</p> -->
+
+<!-- Directive ngIf -->
+<p *ngIf="serverCreated; else noServer">
+  <i>Server was created, server name is <b>{{ serverName }}</b></i>
+</p>
+<!-- Else -->
+<ng-template #noServer>
+  <p>No server was created!</p>
+</ng-template>
 
 <app-server></app-server>
 <app-server></app-server>
